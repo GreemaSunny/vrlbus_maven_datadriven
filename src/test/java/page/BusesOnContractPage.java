@@ -1,7 +1,6 @@
 package page;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,6 +27,7 @@ By passengerno=By.id("txtnoOfPassenger");
 By remarks=By.id("txtremarks");
 By captcha=By.id("txtcaptcha");
 By submit=By.xpath("//*[@id='wrapper']/div/div/div[2]/div[3]/div[3]/input");
+By okbutton=By.xpath("/html/body/div[1]/div[3]/div/div[2]/button");
 
 
 
@@ -122,7 +122,8 @@ By submit=By.xpath("//*[@id='wrapper']/div/div/div[2]/div[3]/div[3]/input");
 		driver.findElement(captcha);
 		Thread.sleep(30000);		
 	}
-	public void clicksubmit() {
+	public void clicksubmit() throws Exception {
 		driver.findElement(submit).click();
-	}
+		Thread.sleep(5000);
+		driver.findElement(okbutton).click();	}
 }
